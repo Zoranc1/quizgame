@@ -10,8 +10,25 @@ def show_menu():
     option = input("Enter option: ")
     return option
 
+def add_a_quastion():
+    quastion = input("Enter a quastion: ")
+    answer = input("Ok then tell me, "+ quastion +": ")
+    
+    with open("question.txt","a") as f:
+        line = quastion + "|" + answer +"\n"
+        f.write(line)
+    
+    
+    
 while True:
     option = show_menu()
+    
+    
+    if option =="1":
+        print("You picked run quiz")
+    if option =="2":
+        add_a_quastion()
+        
     if option == "3":
         break
 
